@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIG-DCOMP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/fapese-logo.png" alt="logo-dcomp-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="tarefa.js" defer></script>
+</head>
+<body>
+    <img src="images/fapese-logo.png" alt="logo-fapese">
+    <h1>SIGM</h1>
+    <p>O SIGM, também conhecido como Sistema Integrado de Gestão de Materiais,<br> também como objetivo auxiliar no controle de materiais da empresa, armazenando<br> os dados inseridos e gerando métricas a respeito dos respectivos dados.</p>
+<div class="container">
+    <div class="cabeçalho">
+        <h2>Insira seus Dados Escolares</h2>
+    </div>
+
+    <form class="form" id="myForm">
+        <div class="form-control">
+            <label>Ano de Compra:</label>
+            <input type="number" placeholder="Ano em que o material foi adquirido" step="0.1" id="ano" required>
+        </div>
+
+        <div class="form-control">
+            <label>Código do Material:</label>
+            <input type="text" placeholder="Código do Material" id="cd" required>
+        </div>
+
+        <div class="form-control">
+            <label>Quantidade:</label>
+            <input type="number" placeholder="Quantidade Adquirida do mesmo Material" id="ch" required>
+        </div>
+
+        <div class="form-control">
+            <label>Valor (R$):</label>
+            <input type="number" placeholder="Valor Unitário do Material" step="0.1" id="nota" required>
+        </div>
+
+        <button type="submit" onclick="histPessoa(ano.value, cd.value, ch.value, nota.value)">Enviar</button>
+    </form>
+</div>
+<br><br><br>
+<h3>Último Material Adicionado:</h2>
+<table class="table-b">
+    <tr>
+        <th>Código do Material: <span id="tcod"></span></th>
+    </tr>
+    <tr>
+        <th>Valor: <span id="tnota"></span></th>
+    </tr>
+    <tr>
+        <th>Ano de Compra: <span id="tperiodo"></span></th>
+    </tr>
+    <tr>
+        <th>Quantidade: <span id="tch"></span></th>
+    </tr>
+
+</table>
+<h3>Dados sobre Estoque de Materiais:</h2>
+<table class="table-content">
+   
+       
+    <tr>
+        <th>Quantidade de Itens em Estoque: <span id="chtotal"></span></th>
+    </tr>
+   
+    
+</table>
+<br>
+<h3>Estoque Completo de Materiais:</h2>
+<div id="dtPessoas">
+    <table id="tbPessoas">
+        <thead>
+        <tr>
+            <td>Ano/Período</td>
+            <td>Código</td>
+            <td>Quantidade</td>
+            <td>Valor Unitário(R$)</td>
+            <td>Valor Total(R$)</td>
+        </tr>
+        </thead>
+    </table>
+</div>
+
+
+</body>
+</html>
